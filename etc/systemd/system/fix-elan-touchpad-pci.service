@@ -1,0 +1,12 @@
+[Unit]
+Description=PCI 复位 ELAN06FA 触摸板 I2C 控制器
+Documentation=https://bbs.archlinux.org/viewtopic.php?id=312363
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/fix-elan-touchpad-pci
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

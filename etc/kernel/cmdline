@@ -1,0 +1,1 @@
+root=UUID=7275fa2d-5426-4e14-9391-7f4951d2ab28 rw bgrt_disable nmi_watchdog=0 nowatchdog modprobe.blacklist=iTCO_wdt mem_sleep_default=deep loglevel=3
