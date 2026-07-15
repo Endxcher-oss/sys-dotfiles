@@ -6,15 +6,15 @@ PCI_DEV="0000:00:15.0"
 EVENT_PATH="/dev/input/by-path/pci-0000:00:15.0-platform-i2c_designware.0-event-mouse"
 
 # 触摸板已工作 → 零延迟退出
-[ -L "$EVENT_PATH" ] && exit 0
+[ -L "$EVENT_PATH" ] && echo "touchpad already working..." && exit 0
 
 # PCI 移除 → 完全移除 I2C 控制器（相当于断电）
-echo 1 > "/sys/bus/pci/devices/${PCI_DEV}/remove"
+modprobe -r intel_lpss_pci
 
 # 等待移除完成
 sleep 1
 
 # PCI 重枚举 → 控制器重新初始化，触控板被重新探测
-echo 1 > /sys/bus/pci/rescan
+modprobe intel_lpss_pci
 
 exit 0
