@@ -1,1 +1,8 @@
-../../home/Endxcher/dotfiles/sys-pacman/etc/pacman.d/mirrorlist
+##
+## Arch Linux repository mirrorlist
+##
+
+## China
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch
